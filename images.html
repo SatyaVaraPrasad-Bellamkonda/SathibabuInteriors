@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.image {
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+.image:hover img {
+  transform: scale(0.55);
+  /*trasform :scale(1.05); actually */
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.download {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="container"></div>
+
+<div class="overlay" id="overlay">
+  <span class="close" onclick="closeOverlay()">&times;</span>
+  <a id="download" class="download" download><button>Download</button></a>
+  <img id="fullImage" src="" alt="Full Screen Image">
+</div>
+
+<script>
+function openOverlay(imageSrc) {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("fullImage").src = imageSrc;
+  document.getElementById("download").href = imageSrc;
+}
+
+function closeOverlay() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+function addImage(imageSrc) {
+  const container = document.getElementById("container");
+  const imageDiv = document.createElement("div");
+  imageDiv.classList.add("image");
+  const image = document.createElement("img");
+  image.src = imageSrc;
+  image.onclick = function() {
+    openOverlay(imageSrc);
+  };
+  imageDiv.appendChild(image);
+  container.appendChild(imageDiv);
+}
+
+// Example: Add images
+addImage("image1.jpg");
+addImage("image2.jpg");
+addImage("image3.jpg");
+addImage("image4.jpg");
+addImage("image5.jpg");
+addImage("image6.jpg");
+addImage("image7.jpg");
+addImage("image8.jpg");
+addImage("image9.jpg");
+addImage("image10.jpg");
+addImage("image11.jpg");
+addImage("image12.jpg");
+addImage("image14.jpg");
+addImage("image15.jpg");
+addImage("image16.jpg");
+addImage("image17.jpg");
+addImage("image18.jpg");
+addImage("image19.jpg");
+addImage("image20.jpg");
+addImage("image21.jpg");
+addImage("image22.jpg");
+addImage("image23.jpg");
+addImage("image24.jpg");
+addImage("image25.jpg");
+addImage("image26.jpg");
+addImage("image27.jpg");
+addImage("image28.jpg");
+addImage("image29.jpg");
+addImage("image30.jpg");
+
+</script>
+
+</body>
+</html>
