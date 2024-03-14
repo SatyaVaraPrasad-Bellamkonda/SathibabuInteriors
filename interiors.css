@@ -18,12 +18,25 @@ header {
     display: flex;
     align-items: center;
 }
-
+.load-more-button {
+    display: block;
+    border-radius: 50px;
+    width:150px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #45a049;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
 .logo img {
     width: 100px;
     /* Adjust as needed */
     height: auto;
-    margin-right: 20px;
+    margin-right: 20px; 
 }
 
 .title {
@@ -226,6 +239,11 @@ footer p{
     nav li {
         margin: 5px 0;
         /* Add vertical spacing between the list items */
+    }
+    nav ul li {
+        display: inline;
+        margin: 10px 20px;
+        font-size: 25px;
     }
 
     .services {
